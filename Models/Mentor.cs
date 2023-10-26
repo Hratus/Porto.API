@@ -1,5 +1,7 @@
 ﻿
 
+using System.Collections;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -10,15 +12,17 @@ public class Mentor
     public  Mentor()
     {
         
-        IList<Aluno> alunos = new List<Aluno>(); // verificar se isso esta certo
-
-        // Squads = new Collection<Squad>(); //
+        IList<Aluno> alunos = new List<Aluno>(); 
+        
     }
     
     [Key]
     [Required]
     [StringLength(100)]
-    public string? Id { get; set; }
+    public string? IdEmail { get; set; }
+    
+    [Required]
+    public string? Identificador { get; set; }
     
     [Required]
     [StringLength(80)]
@@ -29,10 +33,11 @@ public class Mentor
     [Required]
     [StringLength(200)]
     public string? LinkedInUrl { get; set; }
-    
+
+    [ForeignKey("Alunos")]
+    public Aluno? Aluno { get; set; }
+
     // public Empresa? Empresa { get; set; } //
-    
-   //public IList<Aluno> Alunos { get; set;}//
-    
+
     //public IList<Squad> Squads { get; set; } //
 }

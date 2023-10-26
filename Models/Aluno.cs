@@ -1,8 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
-using Microsoft.VisualBasic;
+
+
 
 namespace API.Models;
 [Table("Alunos")]
@@ -14,7 +15,12 @@ public class Aluno
     [Key]
     [Required]
     [StringLength(100)]
-    public string? Id { get; set; }
+    public string? IdEmailAluno { get; set; }
+
+    
+    
+    [Required]
+    public string? Identificador { get; set; }
     
     
     [StringLength(80)]
@@ -40,22 +46,22 @@ public class Aluno
     [StringLength(6)]
     public string? Turno { get; set; }
     
+    [Required]
+    [StringLength(80)]
+    public string? Curso { get; set; }
     
-   // public string? MentorN { get; set; }//
-    
-   
     
     // public Squad? Squad { get; set; } //
     
     // public Empresa? Empresa { get; set; }//
-    
+
     
     public Mentor? Mentor { get; set; }
     
     
     // public Faculdade? Faculdade { get; set; } //
     
-   // public DateTime DataCadastro { get; set; } //
+    public DateTime DataCadastro { get; set; } 
     
     
 }
