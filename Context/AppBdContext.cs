@@ -12,7 +12,7 @@ public class AppBdContext : DbContext
     
     public DbSet<Aluno>? Alunos { get; set; } 
      public DbSet<Mentor>? Mentores { get; set; } 
-   // public DbSet<Faculdade>? Faculdades { get; set; } //
+   public DbSet<Faculdade>? Faculdades { get; set; } 
     //public DbSet<Squad>? Squads { get; set; } //
-  //  public DbSet<Empresa>? Empresas { get; set; } //
+   public DbSet<Empresa>? Empresas { get; set; } 
 }

@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Models;
 [Table("Alunos")]
-public class Aluno
+public class Aluno 
 {
 
     
@@ -53,15 +53,20 @@ public class Aluno
     
     // public Squad? Squad { get; set; } //
     
-    // public Empresa? Empresa { get; set; }//
+    
+    
+   
+
 
     
-    public Mentor? Mentor { get; set; }
     
     
     // public Faculdade? Faculdade { get; set; } //
     
-    public DateTime DataCadastro { get; set; } 
+    public DateTime DataCadastro { get; set; }
+
+   
+    
     
     
 }

@@ -69,13 +69,38 @@ namespace API.Migrations
                     b.ToTable("Alunos");
                 });
 
+            modelBuilder.Entity("API.Models.Empresa", b =>
+                {
+                    b.Property<string>("IdNomeEmpresa")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Identificador")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("IdNomeEmpresa");
+
+                    b.ToTable("Empresas");
+                });
+
+            modelBuilder.Entity("API.Models.Faculdade", b =>
+                {
+                    b.Property<string>("IdNome")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Identificador")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("IdNome");
+
+                    b.ToTable("Faculdades");
+                });
+
             modelBuilder.Entity("API.Models.Mentor", b =>
                 {
                     b.Property<string>("IdEmail")
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Alunos")
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Identificador")
@@ -94,24 +119,7 @@ namespace API.Migrations
 
                     b.HasKey("IdEmail");
 
-                    b.HasIndex("Alunos")
-                        .IsUnique();
-
                     b.ToTable("Mentores");
-                });
-
-            modelBuilder.Entity("API.Models.Mentor", b =>
-                {
-                    b.HasOne("API.Models.Aluno", "Aluno")
-                        .WithOne("Mentor")
-                        .HasForeignKey("API.Models.Mentor", "Alunos");
-
-                    b.Navigation("Aluno");
-                });
-
-            modelBuilder.Entity("API.Models.Aluno", b =>
-                {
-                    b.Navigation("Mentor");
                 });
 #pragma warning restore 612, 618
         }

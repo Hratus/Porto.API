@@ -4,15 +4,16 @@ using System.Collections;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using API.Controllers;
 
 namespace API.Models;
 [Table("Mentores")]
-public class Mentor
+public class Mentor 
 {
     public  Mentor()
     {
         
-        IList<Aluno> alunos = new List<Aluno>(); 
+        //IList<Aluno> alunos = new List<Aluno>(); 
         
     }
     
@@ -33,9 +34,14 @@ public class Mentor
     [Required]
     [StringLength(200)]
     public string? LinkedInUrl { get; set; }
+    
+    IList<Aluno> _alunos = new List<Aluno>();
 
-    [ForeignKey("Alunos")]
-    public Aluno? Aluno { get; set; }
+    
+   
+    
+
+    
 
     // public Empresa? Empresa { get; set; } //
 

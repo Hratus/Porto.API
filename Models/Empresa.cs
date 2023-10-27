@@ -1,25 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Models;
 
+[Table("Empresas")]
 public class Empresa
 {
-
+    
     [Key]
     [Required]
     public string? IdNomeEmpresa { get; set; }
     
+    [Required]
     public string? Identificador { get; set; }
     
-    [Required]
-    [StringLength(100)]
-    public string? MentorDaEmpresa { get; set; }
-
-    public Empresa()
-    {
-        IList<Aluno> alunos = new List<Aluno>();
-    }
     
+    
+    
+    
+
+  
     
     
     
